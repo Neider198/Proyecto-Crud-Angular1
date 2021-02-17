@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  URL_API = 'https://localhost:44319/api';
+  URL_API = 'http://localhost:8000';
   constructor(private http:HttpClient, private router:Router) { }
 
   iniciarSesion(user){
-    return this.http.post(`${this.URL_API}/iniciar_sesion/`, user)
+    return this.http.post(`${this.URL_API}//loginn`, user)
   }
 
   logueado(){
