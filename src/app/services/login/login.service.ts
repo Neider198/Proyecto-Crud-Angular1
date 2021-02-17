@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http:HttpClient, private router:Router) { }
 
   iniciarSesion(user){
-    return this.http.post(`${this.URL_API}//loginn`, user)
+    return this.http.post(`${this.URL_API}/loginn`, user)
   }
 
   logueado(){
