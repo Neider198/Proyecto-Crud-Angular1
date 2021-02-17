@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesion(){
+	console.log(this.user)
     this.loginService
     .iniciarSesion(this.user)
       .subscribe(
