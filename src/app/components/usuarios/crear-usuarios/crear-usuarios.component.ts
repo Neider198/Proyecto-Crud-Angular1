@@ -41,13 +41,17 @@ export class CrearUsuariosComponent implements OnInit {
   usuarios:any = {
    nombres : '',
    apellidos : '',
-   tipoIdentificacionNombre : '',
+   tipoIdentificacion : '',
    identificacion : '',
-   sexoNombre : '' ,
-   usuario: '',
+   sexo : '' ,
    direccion : '',
    telefono : '',  
  };
+
+ user:any={
+  username: '',
+  password : ' '
+ }
  
  
  sexos:any = [
@@ -129,12 +133,27 @@ export class CrearUsuariosComponent implements OnInit {
           res =>{
             this.router.navigate(['/usuario'])
             this.crearTipoIdentificacionComponent.alertaAccion('Guardado')
-            console.log(res)
-            console.log(this.usuarios)
+            this.agregaruserr()
+            // console.log(res)
+            // console.log(this.usuarios)
+
           },
           err => console.log(err)
       )
     
+  }
+
+  agregaruserr(){
+    this.usuariosService
+    .agregaruser(this.user)
+      .subscribe(
+        res =>{
+          this.crearTipoIdentificacionComponent.alertaAccion('Guardado user')
+          console.log(res)
+          console.log(this.user)
+        },
+        err => console.log(err)
+    )
   }
 
   editar(){

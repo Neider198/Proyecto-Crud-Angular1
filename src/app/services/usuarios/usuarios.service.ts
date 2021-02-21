@@ -23,6 +23,10 @@ export class UsuariosService {
     return this.http.post(`${this.URL_API}/persona/`, usuarios)
   }
 
+  agregaruser(users){
+    return this.http.post(`${this.URL_API}/user/`, users)
+  }
+
   editarUsuarios(id, usuarios){
     return this.http.put(`${this.URL_API}/persona/${id}/`, usuarios)
   }
